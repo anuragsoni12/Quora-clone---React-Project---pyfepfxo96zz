@@ -1,0 +1,25 @@
+.post{
+    /* border: 2px solid blue; */
+    padding: 10px;
+    margin: 10px;
+}
+.post-info{
+    margin: 
+    10px;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    
+}
+.post-avatar{
+    border-radius: 4px;
+    /* border: 2px solid #aaa; */
+    display: flex;
+    background-color: rgb(246, 240, 240);
+    /* border: 2px solid red; */
+    align-items: center;
+    padding: 10px 20px;
+}
+.post-avatar > h4{
+    margin-left: 20px;
+    text-align: center;
+}
