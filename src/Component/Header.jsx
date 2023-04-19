@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Logo } from './Logo';
 import { InputField } from './InputField';
 import { AddQues } from './AddQues';
-import { AnsQues } from './AnsQues';
+// import { AnsQues } from './AnsQues';
 export const Header = () => {
 
 
@@ -19,12 +19,10 @@ export const Header = () => {
                 <InputField />
             </div>   
             <div>
-              <Link to='/questionpage'><AddQues/></Link>
+              <AddQues/>
                
             </div>
-            <div>
-                <Link to='/answerpage'> <AnsQues/></Link>
-            </div>
+           
             
             </div>
         </div>

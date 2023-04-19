@@ -1,6 +1,7 @@
-.feed{
-    
+.feed{    
     display: flex;
-    flex-direction: column;
-    flex : 0.6;
+     flex-direction: column; 
+     /* border: 2px solid red; */
+ /* flex : 0.6; */
+ width: 50%;
 }

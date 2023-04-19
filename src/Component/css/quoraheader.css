@@ -1,0 +1,132 @@
+
+.modal-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+   
+    border-bottom: 1px solid rgba(187, 187, 187, 0.5);
+  }
+  
+  .modal-title > h5 {
+    color: gray;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-right: 30px;
+  }
+  
+  .modal-title > h5:hover {
+    color: #b92b27;
+  }
+  
+  .modal-info {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    /* border: 2px solid yellow; */
+    width : 100%;
+
+  }
+  
+  .modal-scope > p {
+    /* margin-left: 10px; */
+    font-size: small;
+    color: gray;
+    /* text-align: center; */
+  }
+  
+  .modal-info > .modal-scope {
+    display: flex;
+    flex-direction:  row;
+    /* justify-content: center; */
+    align-items: center;
+ 
+    width : auto;
+    /* border:  2px solid red; */
+    color: rgb(98, 98, 98);
+    padding: 5px 15px;
+    margin-left: 10px;
+    background-color: rgb(230, 230, 230);
+    border-radius: 33px;
+    cursor: pointer;
+  }
+  
+  .modal-field {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    flex: 1;
+    width: 100%;
+  }
+  
+  .modal-field > .modal-fieldLink {
+    color: gray;
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+  }
+  
+  .modal-field  >.modal-fieldLink > input {
+    flex: 1;
+    border: none;
+    outline: none;
+    margin-left: 5px;
+  }
+  
+  .modal-btns {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    align-items: center;
+  }
+  
+  .modal-btns  > .cancel {
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    color: gray;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 33px;
+    cursor: pointer;
+  }
+  
+  .modal-btns > .cancel:hover {
+    color: red;
+  }
+  
+  .modal-btns  > .add {
+    border: none;
+    outline: none;
+    margin-top: 8px;
+    background-color: #222;
+    color: white;
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 33px;
+    cursor: pointer;
+    width: 50%;
+    font-size: 15px;
+  }
+  
+  .modal-btns > .add:hover {
+    background-color: #eee;
+    color: #222;
+  }
+  .modal-question{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .qHeader__icons {
+      display: none;
+    }
+  
+    .qHeader__input {
+      display: none;
+    }
+  }
+  
