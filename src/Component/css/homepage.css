@@ -1,0 +1,16 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.container-homepage{
+    margin-top: 3%;
+    /* border: 2px solid red; */
+    display: flex;
+    text-align: center;
+}
+
+.center{
+    width: 100%;
+    /* border: 2px solid red; */
+}
