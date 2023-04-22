@@ -15,6 +15,7 @@ export const AddQuestion = (props) => {
         // setTimeStamp(Date.now());
         
         props.addQuestion(question )
+        setQuestion("")
     }
    
     return (
