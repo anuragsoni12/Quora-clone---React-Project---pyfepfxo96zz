@@ -4,11 +4,20 @@ import './index.css';
 // import App from './App';
 import App from './Component/App';
 import reportWebVitals from './reportWebVitals';
-// import '../node_modules/react-bootstrap/dist/react-bootstrap';
-import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
+
+// import '../node_modules/react-bootstrap/dist/react-bootstrap';
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
+import TimeAgo from 'javascript-time-ago'
+
+import en from 'javascript-time-ago/locale/en.json'
+// import ru from 'javascript-time-ago/locale/ru.json'
+
+TimeAgo.addDefaultLocale(en)
+// TimeAgo.addLocale(ru)
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  
   <React.StrictMode>
     <App />
   </React.StrictMode>

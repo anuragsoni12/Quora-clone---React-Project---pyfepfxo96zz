@@ -25,9 +25,9 @@ export const AddAnswer = (props) => {
           <Form.Control onChange={(e) => setAnswer(e.target.value)} value={answer} type="text" placeholder="Enter Answer" />
           <br />
           <Container>
-            <Row>
-              <Col lg={2}>
-                <button className="btn btn-sm btn-success" type="submit">   Add Answer
+            <Row >
+              <Col lg={1}>
+                <button style={{width : "120px"}} className="btn btn-sm btn-success" type="submit">Add Answer
                 </button>
               </Col>
             </Row>

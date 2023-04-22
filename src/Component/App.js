@@ -4,7 +4,7 @@ import "../App.css";
 import { useState , useEffect } from "react";
 
 import  {HomePage}  from "./HomePage";
-
+import moment from "moment"
 function App() {
   
   let initialDatabase ;
@@ -14,12 +14,17 @@ function App() {
   else{
     initialDatabase = JSON.parse(localStorage.getItem('database'));
   }
-  
-  const addQuestion = (question) => {
+
+  const addQuestion = (question  ) => {
+   
     console.log('inserted ques' , question);
+    
     let item = {};
+
     item.question = question;
     item.answers = [];
+    
+
     setDataBase([...database , item]);
   }
   const deleteQuestion = (item) => {
@@ -40,7 +45,7 @@ function App() {
         break;
       }
     }
-    setDataBase([...database]);
+    setDataBase([...database ]);
   }
 
   const addAnswer = (answer,item) => {
@@ -54,17 +59,24 @@ function App() {
 
   }
   const [database , setDataBase] = useState(initialDatabase);
+
+
+  
+ 
+  
   useEffect(() => {
+    
     localStorage.setItem("database", JSON.stringify(database));
+   
   }, [database])
-  
-  
+
+
   return (
     <div className="cont">
    
  
-
-  <HomePage name="Add Question" addQuestion={addQuestion} deleteQuestion={deleteQuestion} addAnswer={addAnswer} deleteAnswer={deleteAnswer}  database={database} />
+  
+   <HomePage name="Add Question"   addQuestion={addQuestion} deleteQuestion={deleteQuestion}  addAnswer={addAnswer} deleteAnswer={deleteAnswer}  database={database} />
        
     
 

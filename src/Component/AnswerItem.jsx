@@ -14,7 +14,7 @@ export const AnswerItem = (props) => {
                 <Row>
                 <Col lg={1}>
                         <button
-                            className="btn btn-sm btn-danger float-right"
+                            className="btn btn-sm btn-danger "
                             onClick={() => {
                                 props.deleteAnswer(props.answer, props.item);
                             }}

@@ -2,7 +2,11 @@ import React from 'react';
 import {Table , Badge} from "react-bootstrap";
 import QuestionItem  from './QuestionItem';
 export const Feeds = (props) => {
+
+  
   console.log('props in feed', props)
+  console.log(props.database)
+  
   return (
     <div>
         <Table striped bordered >
@@ -21,10 +25,14 @@ export const Feeds = (props) => {
                       <QuestionItem
                         key={questionItem.question}
                         // key={index}
+                        
+                        d={props.database}
                         item={questionItem}
                         deleteQuestion={props.deleteQuestion}
                         addAnswer={props.addAnswer}
                         deleteAnswer={props.deleteAnswer}
+                      
+                        
                       />
                     </td>
                   </tr>

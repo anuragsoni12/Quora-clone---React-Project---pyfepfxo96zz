@@ -4,17 +4,19 @@ import Button from 'react-bootstrap/Button';
 
 import Form  from "react-bootstrap/Form";
 export const AddQuestion = (props) => {
-    console.log('props', props)
+    // console.log('props', props)
     const [question , setQuestion] = useState("");
-  
+    // const [timeStamp , setTimeStamp] = useState(new Date());
     const submit = (e) =>{
         e.preventDefault();
         if(!question){
             alert("Question can'not be blank!");
         }
-        props.addQuestion(question);
-        setQuestion("");
+        // setTimeStamp(Date.now());
+        
+        props.addQuestion(question )
     }
+   
     return (
     <div>
         <Form onSubmit={submit} >

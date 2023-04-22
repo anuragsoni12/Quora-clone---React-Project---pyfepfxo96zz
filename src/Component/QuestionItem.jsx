@@ -1,5 +1,6 @@
-import React from 'react'
+
 import { Accordion, Badge, Table } from "react-bootstrap";
+import {Avatar} from "@mui/material"
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Col from "react-bootstrap/Col";
@@ -7,20 +8,56 @@ import Row from "react-bootstrap/Row";
 import { Card } from 'react-bootstrap';
 import { AnswerItem } from './AnswerItem';
 import { AddAnswer } from './AddAnswer';
-const QuestionItem = ({
-    item,
-    deleteQuestion,
-    deleteAnswer,
-    addAnswer
-}) => {
-    return (
-        <div>
+// import { useState } from "react";
 
-            <Accordion defaultActiveKey="1">
+
+
+
+const QuestionItem = ({
+  item,
+  deleteQuestion,
+    deleteAnswer,
+    addAnswer,
+    
+
+}) => {
+
+  console.log('item in quesList' , item)
+  const RowStyle = {
+                  
+                    
+                    padding :' 0px 10px'
+                    
+                    }
+  const ColStyle = {
+    display : 'flex',
+    padding : '10px 0px',
+    // border : '2px solid red',
+    alignItems : 'center',
+    // flexDirection : 'colum style={{fontSize : '20px' , marginTop 0 '18px' }}n'
+  }
+
+
+
+
+  return (
+    <div>
+          
+
+            <Accordion >
                 <Card>
-                    <Accordion.Item  eventKey='0'>
+                    <Accordion.Item  eventKey='1'>
                         <Accordion.Header >
-                            <Container>
+                            <Container fluid>
+                              <Row style={RowStyle}>
+                                <Col style={ColStyle}>
+                                <Avatar/>
+                                <h5 style={{fontSize : '25px' , margin : '10px 10px' ,  }}> Test user name</h5>
+                                  <h5 style={{fontSize : '18px' , margin : '1px 1px 0px ' , color : '#aaa' }}>Time Stamp</h5>
+                                 
+                                </Col>
+                              </Row>
+                              
                                 <Row>
                                     <Col>{item.question}</Col>
                                     
@@ -52,6 +89,7 @@ const QuestionItem = ({
                         <Accordion.Body>
                         <Card.Body>
                         <Table bordered hover responsive>
+                        <AddAnswer item={item} addAnswer={addAnswer}></AddAnswer>
                 <thead>
                   <tr>
                     <th>
@@ -79,7 +117,7 @@ const QuestionItem = ({
                       })}
                 </tbody>
               </Table>
-              <AddAnswer item={item} addAnswer={addAnswer}></AddAnswer>
+              
                         </Card.Body>
                         </Accordion.Body>
                     </Accordion.Item>
