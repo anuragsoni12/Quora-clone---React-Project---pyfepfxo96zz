@@ -1,8 +1,34 @@
 import React, { useState } from 'react';
 import { Container ,Row , Col ,  } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
-
+import SearchIcon from '@mui/icons-material/Search';
 import Form  from "react-bootstrap/Form";
+
+
+
+const InputColStyle = {
+    // border : '2px solid red',
+    borderRadius : '6px',
+    // width : '40%',
+    display : 'flex',
+    // justifyContent : 'space-between',
+    alignItems : 'center',
+    backgroundColor : "#b2b2b2"
+}
+const ChangeInput = {
+    
+    width : '100%',
+    padding : '6px 5px',
+    // border  : '2px ssxolid red',
+    // color : '#fff',
+    backgroundColor : '#b2b2b2',
+    outline : 'none',
+    border : 'none',
+    
+   
+
+}
+
 export const AddQuestion = (props) => {
     // console.log('props', props)
     const [question , setQuestion] = useState("");
@@ -21,13 +47,14 @@ export const AddQuestion = (props) => {
     return (
     <div>
         <Form onSubmit={submit} >
-        <Form.Group  controlId="formBasicEmail">
+        <Form.Group  >
             <Container>
                 <Row>
-                    <Col>
-                    <Form.Control
+                    <Col style={InputColStyle}>
+                    <SearchIcon/>
+                    <input style={ChangeInput}
             type="text"
-            placeholder='type your question'
+            placeholder='Type your question....'
             value = {question}
             onChange={(e)=> setQuestion(e.target.value)}
             />

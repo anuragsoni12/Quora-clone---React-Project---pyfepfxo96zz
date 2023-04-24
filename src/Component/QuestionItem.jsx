@@ -19,10 +19,12 @@ const QuestionItem = ({
     deleteAnswer,
     addAnswer,
     
+    
 
 }) => {
 
   console.log('item in quesList' , item)
+
   const RowStyle = {
                   
                     
@@ -52,8 +54,8 @@ const QuestionItem = ({
                               <Row style={RowStyle}>
                                 <Col style={ColStyle}>
                                 <Avatar/>
-                                <h5 style={{fontSize : '25px' , margin : '10px 10px' ,  }}> Test user name</h5>
-                                  <h5 style={{fontSize : '18px' , margin : '1px 1px 0px ' , color : '#aaa' }}>Time Stamp</h5>
+                                <h5 style={{fontSize : '25px' , margin : '10px 10px' ,  }}> Test user</h5>
+                                  <h5 style={{fontSize : '15px' , margin : '6px 1px 0px ' , color : 'blue' }}>Follow</h5>
                                  
                                 </Col>
                               </Row>

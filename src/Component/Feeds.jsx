@@ -1,6 +1,8 @@
 import React from 'react';
+import "../Component/css/sidebar.css";
 import {Table , Badge} from "react-bootstrap";
 import QuestionItem  from './QuestionItem';
+
 export const Feeds = (props) => {
 
   
@@ -8,10 +10,12 @@ export const Feeds = (props) => {
   console.log(props.database)
   
   return (
-    <div>
+    <div className='homepage-container' >
+      
+        <div className='feeds'>
         <Table striped bordered >
             <thead>
-              <tr>
+              <tr style={{backgroundColor : '#ffffff'}}>
                 <th>Posted Question{""} <Badge variant="info">{props.database.length}</Badge></th>
                
               </tr>
@@ -25,8 +29,8 @@ export const Feeds = (props) => {
                       <QuestionItem
                         key={questionItem.question}
                         // key={index}
-                        
-                        d={props.database}
+
+                       
                         item={questionItem}
                         deleteQuestion={props.deleteQuestion}
                         addAnswer={props.addAnswer}
@@ -40,6 +44,10 @@ export const Feeds = (props) => {
               }
             </tbody>
         </Table>
+        </div>
+        {/* <div className='sidebar'>
+          <SideBar/>
+      </div> */}
     </div>
   )
 }
