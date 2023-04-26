@@ -8,6 +8,7 @@ import Row from "react-bootstrap/Row";
 import { Card } from 'react-bootstrap';
 import { AnswerItem } from './AnswerItem';
 import { AddAnswer } from './AddAnswer';
+import { useState } from "react";
 // import { useState } from "react";
 
 
@@ -25,6 +26,9 @@ const QuestionItem = ({
 
   console.log('item in quesList' , item)
 
+  const [currDate, setCurrDate] = useState(() => {
+    return Date.now()
+  });
   const RowStyle = {
                   
                     
@@ -38,13 +42,12 @@ const QuestionItem = ({
     alignItems : 'center',
     // flexDirection : 'colum style={{fontSize : '20px' , marginTop 0 '18px' }}n'
   }
+
   
+  setTimeout(() => {
+    setCurrDate(Date.now())
+  }, 60000);
   
-  const newDate = Date.now();
-  const quesTime = new Intl.DateTimeFormat('en-Us',{minute : '2-digit'}).format(newDate);
-  console.log(new Intl.DateTimeFormat('en-Us',{minute : '2-digit'}).format(newDate))
-  
-  console.log(newDate);
   return (
     <div>
           
@@ -57,7 +60,7 @@ const QuestionItem = ({
                               <Row style={RowStyle}>
                                 <Col style={ColStyle}>
                                 <Avatar/>
-                                <h5 style={{fontSize : '25px' , margin : '10px 10px'   }}> Test user </h5>{quesTime} min ago{" "}
+                                <h5 style={{fontSize : '25px' , margin : '10px 10px'   }}> Test user </h5>{Math.ceil((currDate-item.createdAt)/60000)} min ago{" "}
                                   <h5 style={{fontSize : '15px' , margin : '6px 1px 0px 12px ' , color : 'blue' }}>Follow</h5>
                                  
                                 </Col>

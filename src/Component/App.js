@@ -23,7 +23,7 @@ function App() {
 
     item.question = question;
     item.answers = [];
-    
+    item.createdAt = Date.now(); 
 
     setDataBase([...database , item]);
   }

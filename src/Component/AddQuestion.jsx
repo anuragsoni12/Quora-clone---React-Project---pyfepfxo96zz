@@ -53,11 +53,11 @@ export const AddQuestion = (props) => {
                     <Col style={InputColStyle}>
                     <SearchIcon/>
                     <input style={ChangeInput}
-            type="text"
-            placeholder='Type your question....'
-            value = {question}
-            onChange={(e)=> setQuestion(e.target.value)}
-            />
+                        type="text"
+                        placeholder='Type your question....'
+                        value = {question}
+                        onChange={(e)=> setQuestion(e.target.value)}
+                    />
                     </Col>
                     <Col style={{margin : '2px', textAlign:'center'}}>
                     <Button type='submit' variant="primary">Add Question</Button>
