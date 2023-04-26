@@ -38,10 +38,13 @@ const QuestionItem = ({
     alignItems : 'center',
     // flexDirection : 'colum style={{fontSize : '20px' , marginTop 0 '18px' }}n'
   }
-
-
-
-
+  
+  
+  const newDate = Date.now();
+  const quesTime = new Intl.DateTimeFormat('en-Us',{minute : '2-digit'}).format(newDate);
+  console.log(new Intl.DateTimeFormat('en-Us',{minute : '2-digit'}).format(newDate))
+  
+  console.log(newDate);
   return (
     <div>
           
@@ -54,8 +57,8 @@ const QuestionItem = ({
                               <Row style={RowStyle}>
                                 <Col style={ColStyle}>
                                 <Avatar/>
-                                <h5 style={{fontSize : '25px' , margin : '10px 10px' ,  }}> Test user</h5>
-                                  <h5 style={{fontSize : '15px' , margin : '6px 1px 0px ' , color : 'blue' }}>Follow</h5>
+                                <h5 style={{fontSize : '25px' , margin : '10px 10px'   }}> Test user </h5>{quesTime} min ago{" "}
+                                  <h5 style={{fontSize : '15px' , margin : '6px 1px 0px 12px ' , color : 'blue' }}>Follow</h5>
                                  
                                 </Col>
                               </Row>
