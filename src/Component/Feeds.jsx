@@ -1,4 +1,4 @@
-import React from 'react';
+
 import "../Component/css/sidebar.css";
 import {Table , Badge} from "react-bootstrap";
 import QuestionItem  from './QuestionItem';
@@ -6,8 +6,8 @@ import QuestionItem  from './QuestionItem';
 export const Feeds = (props) => {
 
   
-  console.log('props in feed', props)
-  console.log(props.database)
+  // console.log('props in feed', props)
+  // console.log(props.database)
   
   return (
     <div className='homepage-container' >
@@ -45,9 +45,11 @@ export const Feeds = (props) => {
             </tbody>
         </Table>
         </div>
-        {/* <div className='sidebar'>
-          <SideBar/>
-      </div> */}
+        <div className='sidebar'>
+             <ul>
+               
+             </ul>
+      </div>
     </div>
   )
 }

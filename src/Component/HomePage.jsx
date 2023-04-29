@@ -17,7 +17,7 @@ export const HomePage = (props) => {
         backgroundColor : '#ffffff',
         alignItems : 'center'
     }
-    console.log('props in home page', props)
+    // console.log('props in home page', props)
     
    
     return (

@@ -24,7 +24,7 @@ const QuestionItem = ({
 
 }) => {
 
-  console.log('item in quesList' , item)
+  // console.log('item in quesList' , item)
 
   const [currDate, setCurrDate] = useState(() => {
     return Date.now()
@@ -109,9 +109,9 @@ const QuestionItem = ({
                 <tbody>
                   {item.answers.length === 0
                     ? ""
-                    : item.answers.map((answer) => {
+                    : item.answers.map((answer , index) => {
                         return (
-                          <tr>
+                          <tr key={index}>
                             <td>
                               <AnswerItem
                                 key={answer}

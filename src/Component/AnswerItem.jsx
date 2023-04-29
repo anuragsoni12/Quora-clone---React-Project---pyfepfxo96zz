@@ -1,7 +1,8 @@
-// import React, { useState } from "react";
+import React, { useState } from "react";
 import AddCommentIcon from "@mui/icons-material/AddComment";
-import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
-import ThumbDownOffAltIcon from "@mui/icons-material/ThumbDownOffAlt";
+
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import ThumbDownIcon from '@mui/icons-material/ThumbDown';
 import { Col, Row, Container } from "react-bootstrap";
 
 const RowStyleLikeDislike = {
@@ -18,6 +19,14 @@ const ColStyle = {
 };
 
 export const AnswerItem = (props) => {
+  const [like , setLike] = useState(true);
+  const [disLike , setDisLike] = useState(true);
+  const handleLikeFn = () => {
+      setLike(!like);
+  }
+  const handleDisLikeFn = () => {
+    setDisLike(!disLike);
+  }
  
   return (
     <div>
@@ -29,18 +38,14 @@ export const AnswerItem = (props) => {
         </Row>
         <Row style={RowStyleLikeDislike}>
           <Col style={ColStyle}>
-            <ThumbUpOffAltIcon
-              onClick={(event) => {
-                // 👇️ toggle styles on click
-                event.currentTarget.style.color = "white";
-                event.currentTarget.style.backgroundColor = "green";
-              }}
+            <ThumbUpIcon style={  {color : like ? ''  : 'green' }}
+             
+              onClick={() => handleLikeFn()}
               />
 
-            <ThumbDownOffAltIcon onClick={(event)=> {
-              event.currentTarget.style.color = "white";
-                event.currentTarget.style.backgroundColor = "red";
-            }} />
+            <ThumbDownIcon  
+            style={{color  : disLike ? '' : 'red'}}
+            onClick={() => handleDisLikeFn()} />
 
             <AddCommentIcon />
           </Col>
