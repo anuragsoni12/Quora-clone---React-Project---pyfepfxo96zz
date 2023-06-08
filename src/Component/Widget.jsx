@@ -103,7 +103,7 @@ export const Widget = () => {
             
 
           {
-            newsData.map((item)=>(
+           newsData &&  newsData.map((item)=>(
                 <div style={container}>
                   <div style={firstRow}>
                     <div style={firstRowColOn}>
