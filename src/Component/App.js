@@ -63,7 +63,7 @@ function App() {
   
   
   
-  console.log('database in ap', database)
+  // console.log('database in ap', database)
  
   
   useEffect(() => {
