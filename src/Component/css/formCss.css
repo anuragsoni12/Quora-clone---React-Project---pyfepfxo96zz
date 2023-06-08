@@ -1,0 +1,25 @@
+.signInbtn{
+    width: 100%;
+            color: #fff;
+            border-radius: 10px;
+            background-color: #0d6efd;
+            border: none;
+            padding: 10px;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+.signInbtn:active{
+    position: relative;
+    top: 10px;
+    left: 2px;
+
+}   
+.loginBtn{
+    margin: -10px 0px -6px 0px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+
+.errorText{
+    color: red;
+    margin: 0px;
+    
+}

@@ -24,7 +24,7 @@ function App() {
     item.question = question;
     item.answers = [];
     item.createdAt = Date.now(); 
-
+    
     setDataBase([...database , item]);
   }
   const deleteQuestion = (item) => {
@@ -58,10 +58,12 @@ function App() {
     setDataBase([...database]);
 
   }
+
   const [database , setDataBase] = useState(initialDatabase);
-
-
   
+  
+  
+  console.log('database in ap', database)
  
   
   useEffect(() => {
@@ -71,14 +73,18 @@ function App() {
   }, [database])
 
 
+  // console.log(userData.newName)
+  // console.log(userData.newEmail)
+
+
+
   return (
     <div className="cont">
    
- 
+
   
    <HomePage name="Add Question"   addQuestion={addQuestion} deleteQuestion={deleteQuestion}  addAnswer={addAnswer} deleteAnswer={deleteAnswer}  database={database} />
        
-    
 
 </div>
   );

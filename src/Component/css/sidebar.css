@@ -9,12 +9,14 @@
 }
 .sidebar-options{
     /* border:  2px solid green; */
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;    width : 80%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      width : 80%;
     padding: 10px;
     margin: 15px;
     display: flex;
     /* justify-content: center; */
     align-items: center;
+    border-radius:  10px;
 }
 .sidebar-options img{
     width: 35px;
@@ -23,7 +25,8 @@
  
 }
 .sidebar-options p{
-    font-size: 15px;
+    font-size: 14px;
+    font-weight:  500;
     padding: 10px 0px 3px 8px;
 
 }

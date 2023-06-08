@@ -19,7 +19,7 @@ const QuestionItem = ({
   deleteQuestion,
     deleteAnswer,
     addAnswer,
-    
+    avatarName,
     
 
 }) => {
@@ -60,7 +60,7 @@ const QuestionItem = ({
                               <Row style={RowStyle}>
                                 <Col style={ColStyle}>
                                 <Avatar/>
-                                <h5 style={{fontSize : '25px' , margin : '10px 10px'   }}> Test user </h5>{Math.ceil((currDate-item.createdAt)/60000)} min ago{" "}
+                                <h5 style={{fontSize : '20px' , margin : '10px 10px' ,   color : '#0d6efd', fontWeight : '500'  }}>{avatarName} </h5>{Math.ceil((currDate-item.createdAt)/60000)} min ago{" "}
                                   <h5 style={{fontSize : '15px' , margin : '6px 1px 0px 12px ' , color : 'blue' }}>Follow</h5>
                                  
                                 </Col>

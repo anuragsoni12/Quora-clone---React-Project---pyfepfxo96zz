@@ -29,8 +29,8 @@ export const Feeds = (props) => {
                       <QuestionItem
                         key={questionItem.question}
                         // key={index}
-
-                       
+                      
+                        avatarName={props.avatarName}
                         item={questionItem}
                         deleteQuestion={props.deleteQuestion}
                         addAnswer={props.addAnswer}

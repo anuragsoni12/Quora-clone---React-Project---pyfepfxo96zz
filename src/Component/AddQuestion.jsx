@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container ,Row , Col ,  } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
-import SearchIcon from '@mui/icons-material/Search';
+import SearchIcon from '@mui/icons-material/Search';    
 import Form  from "react-bootstrap/Form";
 
 
@@ -9,7 +9,7 @@ import Form  from "react-bootstrap/Form";
 const InputColStyle = {
     // border : '2px solid red',
     borderRadius : '6px',
-    // width : '40%',
+    // width : '100%',
     display : 'flex',
     // justifyContent : 'space-between',
     alignItems : 'center',
@@ -31,17 +31,31 @@ const ChangeInput = {
 
 export const AddQuestion = (props) => {
     // console.log('props', props)
-    const [question , setQuestion] = useState("");
+    const { addQuestion , login , handleOpen} = props;
+    const [question , setQuestion  ] = useState("");
     // const [timeStamp , setTimeStamp] = useState(new Date());
     const submit = (e) =>{
         e.preventDefault();
-        if(!question){
-            alert("Question can'not be blank!");
+        
+        if(login){
+            handleOpen();
+        
+        }
+        
+        else{
+            
+            if(!question ){
+                alert("Question can'not be blank!");
+            }
+            else{
+
+                addQuestion(question )
+                setQuestion("")
+            }
         }
         // setTimeStamp(Date.now());
         
-        props.addQuestion(question )
-        setQuestion("")
+      
     }
    
     return (
