@@ -65,7 +65,7 @@ export const Widget = () => {
   }
 
   // ---------------------------------------CallingApi-----------------------
-  const url = "https://newsapi.org/v2/everything?q=tesla&from=2023-05-09&sortBy=publishedAt&apiKey=9333e83f995d4af6aa74ae472cfb127a";
+  const url = "https://newsapi.org/v2/everything?q=apple&from=2023-06-07&to=2023-06-07&sortBy=popularity&apiKey=9333e83f995d4af6aa74ae472cfb127a";
   const [newsData , setNewsData] = useState([]);
   const callNewsApi = async () => {
     const response = await fetch(url)
