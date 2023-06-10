@@ -69,12 +69,18 @@ export const Widget = () => {
 
   // ---------------------------------------CallingApi-----------------------
   // const url = "https://newsapi.org/v2/everything?q=apple&from=2023-06-07&to=2023-06-07&sortBy=popularity&apiKey=9333e83f995d4af6aa74ae472cfb127a";
-  // const url = process.env.REACT_APP_API_URL;
-  const apiUrl = process.env.REACT_APP_API_URL;
-  console.log('apiUrl',apiUrl);
+  const url = process.env.REACT_APP_API_URL;
+  const apiKey = process.env.REACT_APP_API_KEY;
+  // const apiUrl = process.env.REACT_APP_API_URL;
+  // console.log('apiUrl',apiUrl);
   const [newsData , setNewsData] = useState([]);
   const callNewsApi = async () => {
-    const response = await fetch(apiUrl)
+    const response = await fetch(`${url}` , {
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json'
+      }
+    })
     const data = await response.json();
     setNewsData(data.articles);
   }
@@ -110,8 +116,8 @@ export const Widget = () => {
             
 
           {
-           newsData &&  newsData.map((item)=>(
-                <div style={container}>
+           newsData &&  newsData.map((item , index)=>(
+                <div style={container} key={index}>
                   <div style={firstRow}>
                     <div style={firstRowColOn}>
                       <h3 style={{
