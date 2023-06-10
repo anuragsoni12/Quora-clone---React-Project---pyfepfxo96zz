@@ -74,7 +74,7 @@ export const Widget = () => {
   console.log('apiUrl',apiUrl);
   const [newsData , setNewsData] = useState([]);
   const callNewsApi = async () => {
-    const response = await fetch(url)
+    const response = await fetch(apiUrl)
     const data = await response.json();
     setNewsData(data.articles);
   }
