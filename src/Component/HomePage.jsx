@@ -10,31 +10,28 @@ import { Widget } from "./Widget";
 import { Button } from "react-bootstrap";
 import { Modal } from "react-bootstrap";
 import AuthenticationComponent from "./ModalBody";
+import { useEffect } from "react";
 
 const modalHeaderStyle = {
-    
-    // backgroundColor : '#ededed',
-    margin : '0px',
-    width : '100',
+  // backgroundColor : '#ededed',
+  margin: "0px",
+  width: "100",
 
-    display : 'flex',
-    justifyContent : 'center',
-    // border : '2px solid red',
-    
-    backgroundColor : '#fff',
-    
-  }
-  
-  
-  const ModalBody = {
-    // backgroundColor : '#ededed',
+  display: "flex",
+  justifyContent: "center",
+  // border : '2px solid red',
 
-    display : 'flex',
-    justifyContent : 'space-evenly',
-    // border : '2px solid red',
-    padding : '0px'
-}
+  backgroundColor: "#fff",
+};
 
+const ModalBody = {
+  // backgroundColor : '#ededed',
+
+  display: "flex",
+  justifyContent: "space-evenly",
+  // border : '2px solid red',
+  padding: "0px",
+};
 
 export const HomePage = (props) => {
   const NavBarStyle = {
@@ -45,11 +42,9 @@ export const HomePage = (props) => {
     alignItems: "center",
   };
 
-
-  
   // console.log('props in home page', props)
-  
-  const [avatarName , setAvatarName] = useState("");
+
+  const [avatarName, setAvatarName] = useState("");
 
   const [showModal, setShowModal] = useState(false);
   const handleClose = () => {
@@ -57,51 +52,50 @@ export const HomePage = (props) => {
   };
   const handleOpen = () => {
     setShowModal(true);
-
   };
   const handleLogoutFn = () => {
     setLogin(!login);
-    setAvatarName("")
-  }
-  const [login , setLogin ] = useState(true)
+    setAvatarName("");
+  };
+  const [login, setLogin] = useState(true);
   const loginStatus = () => {
-        setLogin(!login)
-  }
-
+    setLogin(!login);
+  };
+  useEffect(() => {
+    setTimeout(() => {
+      handleOpen();
+    }, 1000);
+  }, []);
   return (
     <div className="container">
       <nav
         style={{ backgroundColor: "#ffffff" }}
         className="navbar navbar-expand-lg "
       >
-         <Modal 
-                onHide={handleClose}
-                show={showModal}
-                size="md"
-                
-                centered
+        <Modal onHide={handleClose} show={showModal} size="md" centered>
+          {/* style={{color : '#0d6efd', width : '100%', fontSize : '35px' ,}} */}
+          <Modal.Header style={modalHeaderStyle}>
+            {" "}
+            <Modal.Title>
+              <h2
+                style={{
+                  color: "#0d6efd",
+                  fontSize: "45px",
+                }}
               >
-                {/* style={{color : '#0d6efd', width : '100%', fontSize : '35px' ,}} */}
-                <Modal.Header style={modalHeaderStyle
-                 } >      <Modal.Title >
-                        <h2
-                  style={{
-                    color: "#0d6efd",
-                    fontSize: "45px",
-                  }}
-                >
-                  Quora
-                </h2>
-                    </Modal.Title>           
-                </Modal.Header>
-                <Modal.Body style={ModalBody} >
-                   
-                    <AuthenticationComponent loginStatus={loginStatus} handleClose={handleClose} setAvatarName={setAvatarName}  />
-                </Modal.Body>
-                <Modal.Footer>
-
-                </Modal.Footer>
-              </Modal>
+                Quora
+              </h2>
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body style={ModalBody}>
+            <AuthenticationComponent
+              loginStatus={loginStatus}
+              handleClose={handleClose}
+              setAvatarName={setAvatarName}
+            />
+          </Modal.Body>
+          <Modal.Footer></Modal.Footer>
+        </Modal>
         <div className="container-fluid  ">
           <Container>
             <Row style={NavBarStyle}>
@@ -116,22 +110,23 @@ export const HomePage = (props) => {
                 </h2>
               </Col>
               <Col lg="6">
-                <AddQuestion addQuestion={props.addQuestion} login={login} handleOpen={handleOpen}  />
+                <AddQuestion
+                  addQuestion={props.addQuestion}
+                  login={login}
+                  handleOpen={handleOpen}
+                />
               </Col>
               <Col lg="2">
-                {
-                  login ?   <Button variant="primary" onClick={handleOpen}>
-                  Login
-              </Button>
-               :
-               <Button variant="primary" onClick={handleLogoutFn}>
-                 Logout
-              </Button>
-                }
-              
+                {login ? (
+                  <Button variant="primary" onClick={handleOpen}>
+                    Login
+                  </Button>
+                ) : (
+                  <Button variant="primary" onClick={handleLogoutFn}>
+                    Logout
+                  </Button>
+                )}
               </Col>
-
-             
             </Row>
           </Container>
         </div>
@@ -145,7 +140,6 @@ export const HomePage = (props) => {
         <div className="center">
           <Card.Body>
             <Feeds
-            loginStatus={loginStatus}
               avatarName={avatarName}
               addQuestion={props.addQuestion}
               database={props.database}

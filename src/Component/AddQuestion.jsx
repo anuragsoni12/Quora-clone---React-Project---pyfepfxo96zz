@@ -1,88 +1,71 @@
-import React, { useState } from 'react';
-import { Container ,Row , Col ,  } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
-import SearchIcon from '@mui/icons-material/Search';    
-import Form  from "react-bootstrap/Form";
-
-
+import React, { useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import SearchIcon from "@mui/icons-material/Search";
+import Form from "react-bootstrap/Form";
 
 const InputColStyle = {
-    // border : '2px solid red',
-    borderRadius : '6px',
-    // width : '100%',
-    display : 'flex',
-    // justifyContent : 'space-between',
-    alignItems : 'center',
-    backgroundColor : "#b2b2b2"
-}
+  // border : '2px solid red',
+  borderRadius: "6px",
+  // width : '100%',
+  display: "flex",
+  // justifyContent : 'space-between',
+  alignItems: "center",
+  backgroundColor: "#b2b2b2",
+};
 const ChangeInput = {
-    
-    width : '100%',
-    padding : '6px 5px',
-    // border  : '2px ssxolid red',
-    // color : '#fff',
-    backgroundColor : '#b2b2b2',
-    outline : 'none',
-    border : 'none',
-    
-   
-
-}
+  width: "100%",
+  padding: "6px 5px",
+  // border  : '2px ssxolid red',
+  // color : '#fff',
+  backgroundColor: "#b2b2b2",
+  outline: "none",
+  border: "none",
+};
 
 export const AddQuestion = (props) => {
-    // console.log('props', props)
-    const { addQuestion , login , handleOpen} = props;
-    const [question , setQuestion  ] = useState("");
-    // const [timeStamp , setTimeStamp] = useState(new Date());
-    const submit = (e) =>{
-        e.preventDefault();
-        
-        if(login){
-            handleOpen();
-        
-        }
-        
-        else{
-            
-            if(!question ){
-                alert("Question can'not be blank!");
-            }
-            else{
+  // console.log('props', props)
+  const { addQuestion } = props;
+  const [question, setQuestion] = useState("");
+  // const [timeStamp , setTimeStamp] = useState(new Date());
+  const submit = (e) => {
+    e.preventDefault();
 
-                addQuestion(question )
-                setQuestion("")
-            }
-        }
-        // setTimeStamp(Date.now());
-        
-      
+    if (!question) {
+      alert("Question can'not be blank!");
+    } else {
+      addQuestion(question);
+      setQuestion("");
     }
-   
-    return (
-    <div>
-        <Form onSubmit={submit} >
-        <Form.Group  >
-            <Container>
-                <Row>
-                    <Col style={InputColStyle}>
-                    <SearchIcon/>
-                    <input style={ChangeInput}
-                        type="text"
-                        placeholder='Type your question....'
-                        value = {question}
-                        onChange={(e)=> setQuestion(e.target.value)}
-                    />
-                    </Col>
-                    <Col style={{margin : '2px', textAlign:'center'}}>
-                    <Button type='submit' variant="primary">Add Question</Button>
-                    </Col>
-                </Row>
-            </Container>
-       
-           
 
+    // setTimeStamp(Date.now());
+  };
+
+  return (
+    <div>
+      <Form onSubmit={submit}>
+        <Form.Group>
+          <Container>
+            <Row>
+              <Col style={InputColStyle}>
+                <SearchIcon />
+                <input
+                  style={ChangeInput}
+                  type="text"
+                  placeholder="Type your question...."
+                  value={question}
+                  onChange={(e) => setQuestion(e.target.value)}
+                />
+              </Col>
+              <Col style={{ margin: "2px", textAlign: "center" }}>
+                <Button type="submit" variant="primary">
+                  Add Question
+                </Button>
+              </Col>
+            </Row>
+          </Container>
         </Form.Group>
-        </Form>
+      </Form>
     </div>
-  )
-}
+  );
+};
