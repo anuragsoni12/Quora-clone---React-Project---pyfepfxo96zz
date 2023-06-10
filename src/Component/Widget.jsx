@@ -5,6 +5,7 @@ import { useEffect } from 'react'
 import NewspaperIcon from '@mui/icons-material/Newspaper';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import InsertCommentIcon from '@mui/icons-material/InsertComment';
+
 export const Widget = () => {
   const Widgets = {
    
@@ -14,6 +15,7 @@ export const Widget = () => {
       alignItems: 'center',
       justifyContent : 'center',
       // border : '2px solid red',
+      cursor : 'pointer',
     }
     
  
@@ -29,6 +31,7 @@ export const Widget = () => {
     margin : '10px 0px',
     padding : '10px',
     boxShadow: 'rgba(0, 0, 0, 0.16) 0px 1px 4px',
+   
   }
   const firstRow = {
     display : 'flex',
@@ -66,6 +69,9 @@ export const Widget = () => {
 
   // ---------------------------------------CallingApi-----------------------
   const url = "https://newsapi.org/v2/everything?q=apple&from=2023-06-07&to=2023-06-07&sortBy=popularity&apiKey=9333e83f995d4af6aa74ae472cfb127a";
+  // const url = process.env.REACT_APP_API_URL;
+  const apiUrl = process.env.REACT_APP_API_URL;
+  console.log('apiUrl',apiUrl);
   const [newsData , setNewsData] = useState([]);
   const callNewsApi = async () => {
     const response = await fetch(url)
@@ -75,6 +81,7 @@ export const Widget = () => {
   // console.log(newsData)
   useEffect(()=> {
     callNewsApi()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
   // console.log(newsData)  
   // console.log(typeof newsData)  
