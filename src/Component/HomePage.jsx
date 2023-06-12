@@ -10,7 +10,6 @@ import { Widget } from "./Widget";
 import { Button } from "react-bootstrap";
 import { Modal } from "react-bootstrap";
 import AuthenticationComponent from "./ModalBody";
-import { useEffect } from "react";
 
 const modalHeaderStyle = {
   // backgroundColor : '#ededed',
@@ -61,11 +60,7 @@ export const HomePage = (props) => {
   const loginStatus = () => {
     setLogin(!login);
   };
-  useEffect(() => {
-    setTimeout(() => {
-      handleOpen();
-    }, 1000);
-  }, []);
+
   return (
     <div className="container">
       <nav

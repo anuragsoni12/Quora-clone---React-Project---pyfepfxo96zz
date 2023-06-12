@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import NewspaperIcon from "@mui/icons-material/Newspaper";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import InsertCommentIcon from "@mui/icons-material/InsertComment";
-import { news } from "./ApiData/newsData";
+// import { news } from "./ApiData/newsData";
 
 export const Widget = () => {
   const Widgets = {
@@ -63,18 +63,20 @@ export const Widget = () => {
   };
 
   // ---------------------------------------CallingApi-----------------------
-  // const url = "https://newsapi.org/v2/everything?q=apple&from=2023-06-07&to=2023-06-07&sortBy=popularity&apiKey=9333e83f995d4af6aa74ae472cfb127a";
+  const url =
+    "https://newsapi.org/v2/everything?q=apple&from=2023-06-07&to=2023-06-07&sortBy=popularity&apiKey=9333e83f995d4af6aa74ae472cfb127a";
 
   const [newsData, setNewsData] = useState([]);
-  // const callNewsApi = async () => {
-  //   const response = await fetch(url);
-  //   const data = await response.json();
-  //   // setNewsData(data.articles);
-  // };
+  const callNewsApi = async () => {
+    const response = await fetch(url);
+    const data = await response.json();
+    setNewsData(data.articles);
+  };
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    setNewsData(news.articles);
+    // setNewsData();
+    callNewsApi();
   }, []);
   // console.log(newsData);
 

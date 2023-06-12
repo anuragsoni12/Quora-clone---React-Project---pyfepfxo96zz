@@ -20,7 +20,8 @@ const inputFieldStyle = {
   borderRadius: "10px",
   textAlign: "center",
   margin: "0px",
-  boxShadow: 'rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px',
+  boxShadow:
+    "rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px",
 };
 const modalBody = {
   // border : '2px solid red',
@@ -44,7 +45,7 @@ const boxParaStyle = {
 };
 const AuthenticationComponent = (props) => {
   // console.log('authentication props' , props)
-  const { loginStatus , handleClose, setAvatarName } = props;
+  const { loginStatus, handleClose, setAvatarName } = props;
 
   // console.log(userDataManageFn)
   const [signUp, setSignUp] = useState(false);
@@ -89,7 +90,6 @@ const AuthenticationComponent = (props) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     setFormData({ ...formData, [e.target.name]: e.target.value });
     setFormData({ ...formData, [e.target.name]: e.target.value });
- 
   };
 
   const handleFormSubmitFn = (e) => {
@@ -144,7 +144,7 @@ const AuthenticationComponent = (props) => {
   };
 
   let db = JSON.parse(localStorage.getItem("formDataBase"));
-  const [welComeUserName , setwelComeUserName ] = useState("")
+  const [welComeUserName, setwelComeUserName] = useState("");
   const [welComeMessage, setwelComeMessage] = useState(false);
   const handleSubmitLoginFn = (e) => {
     e.preventDefault();
@@ -156,25 +156,24 @@ const AuthenticationComponent = (props) => {
         item.userPassword === loginData.password
       ) {
         // setwelComeMessage(`Hello!! ${item.userName}`);
-        setwelComeUserName(`Hello!! ${item.userName}`)
+        setwelComeUserName(`Hello!! ${item.userName}`);
         setwelComeMessage(true);
         setLoginData(initialLogin);
         setAvatarName(item.userName);
-        
+
         loginStatus();
       } else {
-        
         setwelComeUserName("Invalid User's Email and Password");
         setwelComeMessage(false);
       }
     });
   };
-  if(welComeMessage){
-
-    setTimeout(()=>{
+  if (welComeMessage) {
+    setTimeout(() => {
       handleClose();
-    },1000)
+    }, 1000);
   }
+
   const validateLogin = (loginData) => {
     let errorObj = {};
 
@@ -192,21 +191,30 @@ const AuthenticationComponent = (props) => {
 
   return (
     <div style={modalBody}>
-      {
-        welComeMessage ?  <h4 style={{
-          fontSize : '20px',
-          marginTop : '10px',
-          color : '#0d6efd',
-          fontWeight : '600',
-     }}> {welComeUserName} </h4> : <h4 style={{
-      fontSize : '20px',
-      marginTop : '10px',
-      color : 'red',
-      fontWeight : '600',
-     }} >{welComeUserName}</h4>
-      }
-     
-     
+      {welComeMessage ? (
+        <h4
+          style={{
+            fontSize: "20px",
+            marginTop: "10px",
+            color: "#0d6efd",
+            fontWeight: "600",
+          }}
+        >
+          {" "}
+          {welComeUserName}{" "}
+        </h4>
+      ) : (
+        <h4
+          style={{
+            fontSize: "20px",
+            marginTop: "10px",
+            color: "red",
+            fontWeight: "600",
+          }}
+        >
+          {welComeUserName}
+        </h4>
+      )}
 
       {!signUp ? (
         <>
@@ -241,13 +249,11 @@ const AuthenticationComponent = (props) => {
               By continuing, you agree to Quora's Terms of Use and Privacy
               Policy.
             </p>
-            
           </div>
           <div className="box" style={boxStyle}>
             <button
               className="signInbtn loginBtn"
               onClick={handleSubmitLoginFn}
-           
             >
               Login
             </button>
@@ -255,14 +261,14 @@ const AuthenticationComponent = (props) => {
           <div className="box" style={boxStyle}>
             <p
               style={{
-             
                 borderRadius: "10px",
                 padding: "8px",
-                
+
                 textTransform: "upperCase",
                 margin: "0px 0px",
-                
-                boxShadow: 'rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px',
+
+                boxShadow:
+                  "rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px",
               }}
             >
               Or
@@ -283,9 +289,6 @@ const AuthenticationComponent = (props) => {
                   border: "none",
                   padding: "8px 15px",
                   borderRadius: "10px",
-                
-            
-            
                 }}
                 onClick={handleSignUpFn}
               >
@@ -298,7 +301,7 @@ const AuthenticationComponent = (props) => {
         <>
           {/* ----------------------------------------------- */}
           {/* -----------------------------------Inputs----------------------------- */}
-          
+
           <div className="box" style={boxStyle}>
             <input
               style={inputFieldStyle}
@@ -369,12 +372,12 @@ const AuthenticationComponent = (props) => {
           <div className="box" style={boxStyle}>
             <p
               style={{
-                
                 borderRadius: "10px",
                 padding: "8px",
                 textTransform: "upperCase",
                 margin: "0px 0px",
-                boxShadow: 'rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px',
+                boxShadow:
+                  "rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px",
               }}
             >
               Or
@@ -396,7 +399,8 @@ const AuthenticationComponent = (props) => {
                   border: "none",
                   padding: "8px 15px",
                   borderRadius: "10px",
-                  boxShadow: 'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px'
+                  boxShadow:
+                    "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px",
                 }}
                 onClick={handleLoginFn}
               >
