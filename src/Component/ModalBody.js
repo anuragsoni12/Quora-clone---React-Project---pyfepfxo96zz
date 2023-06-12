@@ -24,7 +24,7 @@ const inputFieldStyle = {
     "rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px",
 };
 const modalBody = {
-  // border : '2px solid red',
+  // border: "2px solid red",
   display: "flex",
   flexDirection: "column",
   width: "100%",
@@ -44,8 +44,8 @@ const boxParaStyle = {
   padding: "0px 0px",
 };
 const AuthenticationComponent = (props) => {
+  const { handleLoginStatusFn, setAvatarName } = props;
   // console.log('authentication props' , props)
-  const { loginStatus, handleClose, setAvatarName } = props;
 
   // console.log(userDataManageFn)
   const [signUp, setSignUp] = useState(false);
@@ -160,8 +160,6 @@ const AuthenticationComponent = (props) => {
         setwelComeMessage(true);
         setLoginData(initialLogin);
         setAvatarName(item.userName);
-
-        loginStatus();
       } else {
         setwelComeUserName("Invalid User's Email and Password");
         setwelComeMessage(false);
@@ -170,7 +168,7 @@ const AuthenticationComponent = (props) => {
   };
   if (welComeMessage) {
     setTimeout(() => {
-      handleClose();
+      handleLoginStatusFn();
     }, 1000);
   }
 
