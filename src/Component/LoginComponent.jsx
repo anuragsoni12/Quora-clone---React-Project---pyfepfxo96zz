@@ -30,7 +30,7 @@ const LoginComponent = (props) => {
           style={{
             color: "#0d6efd",
             fontSize: "45px",
-            padding: "20px",
+            padding: "20px 0px 0px 0px",
           }}
         >
           Quora
